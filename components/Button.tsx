@@ -1,7 +1,6 @@
-import React from "react"
+import React, { MouseEventHandler } from "react";
 
-export default function Button ({text} : {text : string}) {
-  return <button onMouseDown={whackAMole}>{text}</button>
+export default function Button
+({text, handler} : {text : string, handler : MouseEventHandler}) {
+  return <button onClick={handler}>{text}</button>
 }
-
-function whackAMole () {alert ('Mole whacked OK!')};

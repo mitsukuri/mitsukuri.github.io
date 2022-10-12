@@ -1,9 +1,8 @@
-import Head from "next/head"
-import React from "react"
+import Head from "next/head";
+import React from "react";
+import ClockToggle from "../components/ClockToggle";
 
-import Search from "../components/Search"
-import Clock from "../components/Clock"
-import Button from "../components/Button"
+import Search from "../components/Search";
 
 export default function App () {
   return <>
@@ -11,10 +10,8 @@ export default function App () {
       <title>Star Wars DB</title>
       <link rel="icon" href="/img/fav/r2d2.svg"/>
     </Head>
-    <Clock inc={1}/>
-    <Clock inc={0.66666}/>
-    <Clock inc={0.33333}/>
+    <ClockToggle/>
+    <br/>
     <Search/>
-    <Button text="Whack a mole"/>
   </>
 }
