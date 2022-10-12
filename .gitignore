@@ -1,0 +1,7 @@
+.next/
+.vscode/
+info/
+media/
+next-env.d.ts
+node_modules/
+out/
