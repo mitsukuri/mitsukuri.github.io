@@ -3,7 +3,7 @@ import React from "react"
 
 import Search from "../components/search"
 
-export default class extends React.Component {
+export default class App extends React.Component {
   render () {
     return <>
     <Head>

@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function () {
+export default function Search () {
   return <input type="search" placeholder="Search characters"/>
 }
