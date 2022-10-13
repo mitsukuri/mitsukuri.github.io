@@ -2,16 +2,21 @@
   margin: 0;
   padding: 0;
 }
-html, body {
+body {
+  background-color: aliceblue;
   box-sizing: border-box;
-  height: 100%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 #__next {
   background: #282828;
-  overflow: hidden;
   display: grid;
-  height: 100%;
+  grid-auto-rows: min-content auto;
+  height: 100vh;
+}
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
