@@ -1,32 +1,39 @@
-import Head from "next/head";
-import Link from "next/link";
-import React, { useReducer } from "react";
-import ClockToggle from "../components/ClockToggle";
+import Head  from "next/head";
+import React from "react";
 
-import Search from "../components/Search";
+import In    from "../components/In";
+import Out   from "../components/Out";
 
-function validateColor (c : string) {
-  const d = /^#[0-9a-f]{3}(?:[0-9a-f]{3})?$/i.test(c) ?  c : '#000';
-  return d;
-}
+import css   from "styled-jsx/css";
+
+const globalStyle = css.global`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    box-sizing: border-box;
+    height: 100%;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  #__next {
+    height: 100%;
+    background: #282828;
+    display: flex;
+    flex-direction: column;
+  }
+`;
 
 export default function App () {
-
-  function colorReducer (color : string, action : string) {
-    return `#${action}`;
-  }
-  const [colorChange, colorDispatch] = useReducer (colorReducer, '#f00');
-
   return <>
+    <style jsx global>{globalStyle}</style>
     <Head>
       <title>Star Wars DB</title>
       <link rel="icon" href="/img/fav/r2d2.svg"/>
     </Head>
-    <h2 style={{color:colorChange}}>My test assignment</h2>
-    <ClockToggle color={validateColor (colorChange)}/>
-    <br/>
-    <Search dispatch={colorDispatch}/>
-    <br/>
-    <Link href='nowhere'>Go Nowhere</Link>
+    <In/>
+    <Out/>
   </>
 }
