@@ -1,6 +1,11 @@
-import React, { MouseEventHandler } from "react";
+import React, { Dispatch, MouseEventHandler } from "react";
 
 export default function Button
-({text, handler} : {text : string, handler : MouseEventHandler}) {
-  return <button onClick={handler}>{text}</button>
+({text, dispatch} : {text : string, dispatch : Dispatch <string>}) {
+  return <
+    button
+    onMouseDown={() => dispatch ('off')}
+    onMouseUp={() => dispatch ('on')}>
+      {text}
+    </button>
 }
