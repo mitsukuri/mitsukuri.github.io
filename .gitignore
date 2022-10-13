@@ -1,7 +1,7 @@
-.next/
-.vscode/
-info/
-media/
+/.next
+/.vscode
+/info
+/media
+/node_modules
+/out
 next-env.d.ts
-node_modules/
-out/

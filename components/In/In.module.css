@@ -5,6 +5,10 @@
   justify-items: center;
 }
 
+.root .expanded {
+	height: 100vh;
+}
+
 .input {
 	border: 1px solid #393939;
 	color: #9d9d9d;

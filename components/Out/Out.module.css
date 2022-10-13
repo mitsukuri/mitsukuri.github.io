@@ -1,0 +1,10 @@
+.root {
+  display: inherit;
+  padding: 5px;
+}
+
+.out {
+  background: #303030;
+  outline: none;
+  border-radius: 3px;
+}

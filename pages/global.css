@@ -14,6 +14,7 @@ body {
   display: grid;
   grid-auto-rows: min-content auto;
   height: 100vh;
+  overflow: hidden
 }
 input {
   font-family: inherit;
