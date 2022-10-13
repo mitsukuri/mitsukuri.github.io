@@ -19,10 +19,11 @@ const globalStyle = css.global`
     box-sizing: inherit;
   }
   #__next {
-    height: 100%;
+    align-items: center;
     background: #282828;
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
 `;
 
