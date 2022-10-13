@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import React, { useReducer } from "react";
 import ClockToggle from "../components/ClockToggle";
 
@@ -21,8 +22,11 @@ export default function App () {
       <title>Star Wars DB</title>
       <link rel="icon" href="/img/fav/r2d2.svg"/>
     </Head>
+    <h2 style={{color:colorChange}}>My test assignment</h2>
     <ClockToggle color={validateColor (colorChange)}/>
     <br/>
     <Search dispatch={colorDispatch}/>
+    <br/>
+    <Link href='nowhere'>Go Nowhere</Link>
   </>
 }
