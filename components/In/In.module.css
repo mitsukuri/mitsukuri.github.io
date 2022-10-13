@@ -1,0 +1,13 @@
+.root {
+  background: red;
+  display: inherit;
+  height: 200px;
+  align-items: center;
+  justify-items: center;
+}
+
+.input {
+  height: 3em;
+  text-align: center;
+  width: 50%;
+}
