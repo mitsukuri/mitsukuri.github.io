@@ -1,9 +1,10 @@
-import { ReducerState, useState } from "react";
-import Button from "./Button";
-import Clock from "./Clock";
-import { useReducer } from "react";
+import { colorContext } from "../contexts/color";
+import { useContext }   from "react";
+import { useReducer }   from "react";
+import Button           from "./Button";
+import Clock            from "./Clock";
 
-export default function ClockToggle () {
+export default function ClockToggle ({color} : {color : string}) {
   const [state, dispatch] = useReducer (reducer, true);
 
   function reducer (state : boolean, action : string) {
@@ -14,8 +15,9 @@ export default function ClockToggle () {
     throw new Error (`Action ${action} is not defined`);
   }
 
-  return <>
+  return (
+    <colorContext.Provider value={color}>
     <Button dispatch={dispatch} text="Hide clocks"/>
     {state && [2, 1, 0.666, 0.333].map ((v,i) => <Clock key={i} inc={v}/>)}
-  </>
+    </colorContext.Provider>);
 }
