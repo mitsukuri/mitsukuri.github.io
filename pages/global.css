@@ -12,6 +12,7 @@ body {
 #__next {
   background: #282828;
   display: grid;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   grid-auto-rows: min-content auto;
   height: 100vh;
   overflow: hidden
