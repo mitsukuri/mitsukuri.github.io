@@ -18,10 +18,11 @@ export default function Search () {
   const [expanded, setExpanded] = useState (true);
   const [data, setData] = useState <SwapiPeople[]>([]);
 
+  // NEVER fetch outside of useEffect !
   useEffect (() => {
     (async () => {
       try {
-        const res = await fetch ('https://swapi.dev/api/people/?search=darth');
+        const res = await fetch ('https://swapi.dev/api/people/?search=sky');
         if (!res.ok) throw new Error (res.statusText);
         const json = await res.json () as SwapiPeopleResponse;
         console.info (json);
