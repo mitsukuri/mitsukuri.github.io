@@ -1,0 +1,32 @@
+.root {
+  background: #222;
+  align-items: center;
+  display: inherit;
+  height: 200px;
+  justify-items: center;
+  border-radius: 5px;
+}
+
+.root .expanded {
+  height: 100vh;
+}
+
+.input {
+  background: #0f0f0f;
+  border: 1px solid #2d2d2d;
+  color: #9d9d9d;
+  border-radius: 5px;
+  height: 3em;
+  outline: none;
+  text-align: center;
+  width: 50%;
+}
+
+.input::selection {
+  background: #000;
+  color:white;
+}
+
+.input::placeholder {
+  color: rgb(100, 100, 100);
+}
