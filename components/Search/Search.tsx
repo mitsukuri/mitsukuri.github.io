@@ -34,10 +34,13 @@ export const searchStateCtx = createContext ({
 
 function reducer (state : SearchState, action : SearchAction) : SearchState {
   switch (action.type) {
-    case 'input-focused': return {...state, expanded : false};
-    case 'input-changed':
-      console.info (action.value);
+    case 'input.focus': return {...state, expanded : false};
+    case 'input.input':
+      console.info (`input: ${action.value}`);
       return {...state, input : action.value as string};
+    case 'input.change':
+      console.info (`change: ${state.input}`);
+      return {...state};
   }
   throw new Error (`Undefined action "${action.type}"`);
 }
