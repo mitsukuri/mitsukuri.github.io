@@ -16,10 +16,10 @@
 .chrome {
   background: repeating-linear-gradient(
     5deg,
-    #555 0%,
-    #111 50%,
-    rgb(136, 136, 136) 50%,
-    #444
+    rgb(112, 77, 77) 0%,
+    rgb(17, 19, 22) 50%,
+    rgb(155, 111, 111) 50%,
+    rgb(54, 58, 70)
   );
   border-radius: 5px;
   box-shadow: 0 1px 2px #000;
@@ -53,8 +53,9 @@
 }
 
 .input::selection {
-  background: #000;
-  color:white;
+  background: #800;
+  box-shadow: 0 0 5px #f00;
+  color: #f00
 }
 
 .input::placeholder {
