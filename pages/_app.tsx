@@ -1,16 +1,7 @@
-import "./_app.css";
+import "./index.css";
 
-import Head  from "next/head";
-import React from "react";
+import { AppProps } from "next/app";
 
-import Search from "../components/Search/Search";
-
-export default function App () {
-  return <>
-    <Head>
-      <title>Star Wars DB</title>
-      <link rel="icon" href="/img/fav/r2d2.svg"/>
-    </Head>
-    <Search/>
-  </>
+export default function MyApp ({Component, pageProps} : AppProps) {
+  return <Component {...pageProps}/>
 }
