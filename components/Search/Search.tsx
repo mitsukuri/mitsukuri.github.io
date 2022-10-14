@@ -1,5 +1,7 @@
 import { createContext,
+         useContext,
          useEffect,
+         useReducer,
          useState }    from "react";
 import { SwapiPeople } from "../../interfaces/swapi-people";
 import In              from "./In/In";
@@ -13,12 +15,37 @@ type SwapiPeopleResponse = {
   results  : SwapiPeople []
 }
 
+export type SearchAction = {
+  type   : string,
+  value? : string | boolean
+}
+
+type SearchState = {
+  expanded : boolean,
+  data     : SwapiPeople[],
+  input    : string
+};
+
+export const searchStateCtx = createContext ({
+  expanded : true,
+  data     : [] as SwapiPeople[],
+  input    : ''
+});
+
+function reducer (state : SearchState, action : SearchAction) : SearchState {
+  switch (action.type) {
+    case 'input-focused': return {...state, expanded : false};
+    case 'input-changed':
+      console.info (action.value);
+      return {...state, input : action.value as string};
+  }
+  throw new Error (`Undefined action "${action.type}"`);
+}
+
 export default function Search () {
-  const inpuContext = createContext ('');
-  const [expanded, setExpanded] = useState (true);
-  const [data, setData] = useState <SwapiPeople[]>([]);
-  const [result, setResult] = useState (false);
-  const [input, setInput] = useState ('');
+
+  const initState = useContext (searchStateCtx);
+  const [state, dispatch] = useReducer (reducer, initState);
 
 /*   // NEVER fetch outside of useEffect !
   useEffect (() => {
@@ -36,8 +63,10 @@ export default function Search () {
     return () => ac?.abort ();
   },[]); // <== NEVER forget the [], otherwise fetch loops infinitely */
 
-  return <>
-    <In expanded={expanded} setExpanded={setExpanded}/>
-    {!expanded && <Out data={data}/>}
-  </>
+  return (
+  <searchStateCtx.Provider value={state}>
+    <In dispatch={dispatch}/>
+    {!state.expanded && <Out dispatch={dispatch}/>}
+  </searchStateCtx.Provider>
+  );
 }
