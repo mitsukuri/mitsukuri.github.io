@@ -4,8 +4,8 @@
   scrollbar-width: thin;
 }
 body {
-  box-sizing: border-box;
   background: #000;
+  box-sizing: border-box;
   overflow: hidden;
 }
 *, *:before, *:after {

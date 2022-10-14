@@ -1,10 +1,10 @@
 .root {
-  background: #222;
   align-items: center;
+  background: #222;
+  border-radius: 5px;
   display: inherit;
   height: 200px;
   justify-items: center;
-  border-radius: 5px;
 }
 
 .root .expanded {
@@ -15,26 +15,37 @@
   background: repeating-linear-gradient(
     0,
     #555 0%,
-    #000 50%,
-    #fff 5%,
+    #111 50%,
+    rgb(136, 136, 136) 55%,
     #444
   );
-  display: inherit;
-  width: 50%;
-  padding: 1px;
   border-radius: 5px;
+  box-shadow: 0 1px 2px #000;
+  display: inherit;
+  padding: 2px;
+  width: 50%;
 }
 
 .input {
   background: #0f0f0f;
+  border-radius: 5px;
   border: 1px solid #000000;
   color: #9d9d9d;
-  border-radius: 5px;
   height: 3em;
   outline: none;
   text-align: center;
-  margin: 1px;
-  box-shadow: inset 0 5px 10px #000;
+}
+
+.stack:focus-within {
+  box-shadow: 0 1px 15px #f003;
+}
+
+.input:focus {
+  background: #300;
+  box-shadow: inset 0 3px 20px #0008;
+  color: #f00;
+  text-shadow: 0 0 2px #f00;
+
 }
 
 .input::selection {
@@ -47,5 +58,5 @@
 }
 
 .input:focus::placeholder {
-  color: #0000;
+  opacity: 0;
 }
