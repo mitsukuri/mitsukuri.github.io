@@ -1,25 +1,37 @@
 .root {
   align-items: center;
-  background: #222;
+  background:
+    linear-gradient(
+    120deg,
+    #2228 0%,
+    #3338 100%),
+    linear-gradient(
+    60deg,
+    #2228 0%,
+    #3338 100%),
+    linear-gradient(
+    0deg,
+    #222 0%,
+    #333 100%);
   border-radius: 5px;
   display: inherit;
   height: 62px;
   justify-items: center;
-  transition: height 0.4s cubic-bezier(0.55, 0, 1, 0.45);
+  transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .expanded {
   height: calc(100vh - 10px);
-  transition: height 0.4s cubic-bezier(0.55, 0, 1, 0.45);
+  transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .chrome {
   background: repeating-linear-gradient(
     5deg,
-    rgb(112, 77, 77) 0%,
-    rgb(17, 19, 22) 50%,
-    rgb(155, 111, 111) 50%,
-    rgb(54, 58, 70)
+    hsl(0, 20%, 20%) 0%,
+    hsl(220, 20%, 60%) 50%,
+    hsl(0, 20%, 20%) 50%,
+    hsl(220, 20%, 45%)
   );
   border-radius: 5px;
   box-shadow: 0 1px 2px #000;
