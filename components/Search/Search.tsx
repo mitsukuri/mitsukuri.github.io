@@ -7,13 +7,13 @@ export default function Search () {
   const [expanded, setExpanded] = useState (true);
   const [data, setData] = useState ('');
 
-  useEffect (() => {
-    (async () => {
-       const data = await fetch ('https://swapi.dev/api/people/?search=darth');
-       const json = await data.text ();
-       setData (json.toString ());
-    })();
-  });
+  // useEffect (() => {
+  //   (async () => {
+  //      const data = await fetch ('https://swapi.dev/api/people/?search=darth');
+  //      const json = await data.text ();
+  //      setData (json.toString ());
+  //   })();
+  // });
 
   return <>
     <In expanded={expanded} setExpanded={setExpanded}/>

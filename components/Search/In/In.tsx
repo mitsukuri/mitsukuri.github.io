@@ -9,9 +9,11 @@ export default function In
 })
 {
   return <div className={style.root}>
-    <input
-    className={style.input}
-      type="search" placeholder="May the force be with you"
-    />
+    <div className={style.stack}>
+      <input
+      className={style.input}
+        type="search" placeholder="May the force be with you"
+      />
+    </div>
   </div>;
 }
