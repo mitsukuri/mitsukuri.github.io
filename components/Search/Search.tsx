@@ -1,7 +1,10 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext,
+         useEffect,
+         useState }    from "react";
 import { SwapiPeople } from "../../interfaces/swapi-people";
-import In from "./In/In";
-import Out from "./Out/Out";
+import In              from "./In/In";
+import Out             from "./Out/Out";
+
 
 type SwapiPeopleResponse = {
   count    : number,
