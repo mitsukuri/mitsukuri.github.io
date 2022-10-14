@@ -1,4 +1,4 @@
-export interface Character {
+export interface SwapiPeople {
   name : string,
   height : string,
   mass : string,
