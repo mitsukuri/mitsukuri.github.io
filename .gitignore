@@ -1,7 +1,7 @@
-/.next
-/.vscode
-/info
-/media
-/node_modules
-/out
+.next/
+.vscode/
+info/
+media/
+node_modules/
+out/
 next-env.d.ts
