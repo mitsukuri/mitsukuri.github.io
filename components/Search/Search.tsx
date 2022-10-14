@@ -20,6 +20,7 @@ export default function Search () {
 
   // NEVER fetch outside of useEffect !
   useEffect (() => {
+    const ac = new AbortController ();
     (async () => {
       try {
         const res = await fetch ('https://swapi.dev/api/people/?search=sky');
@@ -30,7 +31,8 @@ export default function Search () {
         setData (json.results);
       } catch (e) {throw e}
     })();
-  });
+    return () => ac?.abort ();
+  },[]); // <== NEVER forget the [], otherwise fetch loops infinitely
 
   return <>
     <In expanded={expanded} setExpanded={setExpanded}/>
