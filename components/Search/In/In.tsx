@@ -11,8 +11,10 @@ export default function In
   return <div className={[style.root, expanded && style.expanded].join (' ')}>
     <div className={style.chrome}>
       <input
-      className={style.input}
-        type="search" placeholder="May the force be with you"
+        className={style.input}
+        type="search"
+        placeholder="May the force be with you"
+        onFocus={() => setExpanded (false)}
       />
     </div>
   </div>;

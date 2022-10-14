@@ -17,6 +17,8 @@ export default function Search () {
   const inpuContext = createContext ('');
   const [expanded, setExpanded] = useState (true);
   const [data, setData] = useState <SwapiPeople[]>([]);
+  const [result, setResult] = useState (false);
+  const [input, setInput] = useState ('');
 
 /*   // NEVER fetch outside of useEffect !
   useEffect (() => {
@@ -36,6 +38,6 @@ export default function Search () {
 
   return <>
     <In expanded={expanded} setExpanded={setExpanded}/>
-    {expanded && <Out data={data}/>}
+    {!expanded && <Out data={data}/>}
   </>
 }
