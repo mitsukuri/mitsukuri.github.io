@@ -8,7 +8,7 @@ export default function In
   setExpanded : Dispatch <SetStateAction <boolean>>
 })
 {
-  return <div className={style.root}>
+  return <div className={[style.root, expanded && style.expanded].join (' ')}>
     <div className={style.stack}>
       <input
       className={style.input}

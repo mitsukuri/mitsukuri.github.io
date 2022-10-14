@@ -7,8 +7,8 @@
   justify-items: center;
 }
 
-.root .expanded {
-  height: 100vh;
+.expanded {
+  height: calc(100vh - 10px); /* why The Fuck??!!! */
 }
 
 .stack {

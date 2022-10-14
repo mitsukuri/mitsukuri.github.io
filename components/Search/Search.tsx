@@ -18,7 +18,7 @@ export default function Search () {
   const [expanded, setExpanded] = useState (true);
   const [data, setData] = useState <SwapiPeople[]>([]);
 
-  // NEVER fetch outside of useEffect !
+/*   // NEVER fetch outside of useEffect !
   useEffect (() => {
     const ac = new AbortController ();
     (async () => {
@@ -32,10 +32,10 @@ export default function Search () {
       } catch (e) {throw e}
     })();
     return () => ac?.abort ();
-  },[]); // <== NEVER forget the [], otherwise fetch loops infinitely
+  },[]); // <== NEVER forget the [], otherwise fetch loops infinitely */
 
   return <>
     <In expanded={expanded} setExpanded={setExpanded}/>
-    <Out data={data}/>
+    {expanded && <Out data={data}/>}
   </>
 }
