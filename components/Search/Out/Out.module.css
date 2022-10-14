@@ -1,7 +1,8 @@
 .root {
   display: inherit;
-  background: #111;
+  background: #1c1c1c;
   border-radius: 5px;
+  outline: 1px solid #0d0d0d;
 }
 
 .out {

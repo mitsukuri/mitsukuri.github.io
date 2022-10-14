@@ -14,10 +14,13 @@
     #222 0%,
     #333 100%);
   border-radius: 5px;
+  box-shadow: 0 20px 60px -20px #0028c4;
   display: inherit;
   height: 62px;
   justify-items: center;
+  outline: 1px solid black;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+  z-index: 1;
 }
 
 .expanded {
