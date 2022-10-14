@@ -1,4 +1,4 @@
-import "./global.css";
+import "./_app.css";
 
 import Head  from "next/head";
 import React from "react";
