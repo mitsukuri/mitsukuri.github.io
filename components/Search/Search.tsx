@@ -2,7 +2,6 @@ import Router, { useRouter } from "next/router";
 
 import { createContext,
          Dispatch,
-         useCallback,
          useEffect,
          useReducer}   from "react";
 
@@ -35,7 +34,6 @@ export const DispatchCtx = createContext ({} as Dispatch <SearchAction>);
 export default function Search () {
 
   const [state, dispatch] = useReducer (reducer, initState);
-  const router = useRouter ();
 
   function reducer (state : TSearchState, action : SearchAction) : TSearchState
   {
@@ -49,12 +47,17 @@ export default function Search () {
   }
 
   useEffect (() => {
-
-  }, [router]);
-
-  useEffect (() => {
-
     if (state.commit === '') return;
+
+    const ss = sessionStorage.getItem (`query:${state.commit}`);
+    if (ss) {
+      const json = JSON.parse (ss);
+      if (json) {
+        dispatch ({what: 'data.fetch', payload: json});
+        console.info (`Got ${state.commit} from SessionStorage`);
+        return;
+      }
+    }
 
     Router.push ('/', `/search?q=${state.commit}/`, {shallow: true});
 
@@ -80,6 +83,7 @@ export default function Search () {
 
         console.info (results);
         dispatch ({what: 'data.fetch', payload: results})
+        results.length && sessionStorage.setItem (`query:${state.commit}`, JSON.stringify (results));
       }
       catch (e) {throw e}
     })();
