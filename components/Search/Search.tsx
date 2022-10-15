@@ -6,7 +6,7 @@ import { createContext,
          useReducer}   from "react";
 
 import { SwapiPeople } from "../../interfaces/swapi-people";
-import { SSGet, SSSet } from "../../util/util";
+import { getSS, setSS } from "../../util/util";
 import In              from "./In/In";
 import Out             from "./Out/Out";
 
@@ -50,7 +50,7 @@ export default function Search () {
   useEffect (() => {
     if (state.commit === '') return;
 
-    const cached = SSGet ('query', state.commit);
+    const cached = getSS ('query', state.commit);
     if (cached) {
       dispatch ({what: 'data.fetch', payload: cached});
       return;
@@ -80,7 +80,7 @@ export default function Search () {
 
         console.info (results);
         dispatch ({what: 'data.fetch', payload: results})
-        results.length && SSSet ('query', state.commit, results);
+        results.length && setSS ('query', state.commit, results);
       }
       catch (e) {throw e}
     })();

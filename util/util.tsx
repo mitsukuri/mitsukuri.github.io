@@ -1,4 +1,4 @@
-export function SSGet (prefix: string, key : string) {
+export function getSS (prefix: string, key : string) {
   const i = sessionStorage.getItem (`${prefix}:${key}`);
   if (i) {
     const json = JSON.parse (i);
@@ -9,7 +9,7 @@ export function SSGet (prefix: string, key : string) {
   }
 }
 
-export function SSSet (prefix: string, key : string, data : Object) {
+export function setSS (prefix: string, key : string, data : Object) {
   sessionStorage.setItem (`${prefix}:${key}`, JSON.stringify (data));
   console.info (`Saved ${key} to SessionStorage`);
 }

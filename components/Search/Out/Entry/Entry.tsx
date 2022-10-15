@@ -1,8 +1,9 @@
 import { useEffect, useState }   from 'react';
 
-import { SwapiPeople } from '../../../../interfaces/swapi-people';
-import { SwapiPlanet } from '../../../../interfaces/swapi-planet';
-import style           from './Entry.module.css';
+import { SwapiPeople }  from '../../../../interfaces/swapi-people';
+import { SwapiPlanet }  from '../../../../interfaces/swapi-planet';
+import { getSS, setSS } from '../../../../util/util';
+import style            from './Entry.module.css';
 
 export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
@@ -11,6 +12,13 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
   useEffect (() => {
 
     if (!data.homeworld) return;
+
+    const cached = getSS ('planet', data.homeworld);
+    if (cached) {
+      setPlanet (cached.name);
+      return;
+    }
+
     const URL = data.homeworld;
     const ac  = new AbortController ();
 
@@ -25,6 +33,8 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
         if (!json.name) throw new Error ('Can\'t fetch data');
         setPlanet (json.name);
+
+        data.homeworld && setSS ('planet', data.homeworld, json);
       }
       catch (e) {throw e}
     })();
