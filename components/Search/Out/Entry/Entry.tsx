@@ -1,8 +1,3 @@
-/*
-states: mini | full
-when going to full, routing must update accordingly as if we were visiting
-a dedicated page, and then back to /search
-*/
 import { useEffect, useState }   from 'react';
 
 import { SwapiPeople } from '../../../../interfaces/swapi-people';
