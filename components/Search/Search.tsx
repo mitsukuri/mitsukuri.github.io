@@ -31,9 +31,9 @@ export default function Search () {
 
   function reducer (state : TSearchState, action : SearchAction) : TSearchState {
     switch (action.type) {
-      case 'input.focus':
-          if (state.expanded) return {...state, expanded : false};
-          return state;
+      case 'input.focus': return (state.expanded)
+        ? {...state, expanded : false}
+        : state;
       case 'input.change':
         console.info (`change: ${action.value}`);
         return {...state, commit : action.value as string};
