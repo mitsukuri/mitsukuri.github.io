@@ -50,6 +50,10 @@ export default function Search () {
 
   useEffect (() => {
 
+  }, [router]);
+
+  useEffect (() => {
+
     if (state.commit === '') return;
 
     Router.push ('/', `/search?q=${state.commit}/`, {shallow: true});
