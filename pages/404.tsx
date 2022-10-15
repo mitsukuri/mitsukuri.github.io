@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Link          from "next/link";
 
 export default function E404 () {
+
   const r = useRouter ();
   return <>
   <h1 suppressHydrationWarning>
