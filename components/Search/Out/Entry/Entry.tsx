@@ -38,6 +38,6 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
   return (
   <div className = {style.root}>
-    {data.name} | {planet} | {data.birth_year} | {data.gender}
+    Name: {data.name} | Planet: {planet} | Year of birth: {data.birth_year} | Gender: {data.gender}
   </div>);
 }

@@ -4,6 +4,7 @@
   border-radius: 5px;
   outline: 1px solid #0d0d0d;
   overflow: auto;
+  padding: 3px;
 }
 
 .out {
