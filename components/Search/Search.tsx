@@ -13,7 +13,7 @@ type SwapiPeopleResponse = {
   previous : string,
   results  : SwapiPeople []
 }
-export type SearchAction = {
+type SearchAction = {
   what      : string,
   payload?  : string | boolean | SwapiPeople []
 }
@@ -22,9 +22,12 @@ const initState = {
   mini     : false,
   data     : [] as SwapiPeople[],
 };
-export type TSearchState = typeof initState;
+type TSearchState = typeof initState;
+
 export const StateCtx    = createContext (initState);
 export const DispatchCtx = createContext ({} as Dispatch <SearchAction>);
+
+////////////////////////////[Search]/////////////////////////////////////
 
 export default function Search () {
 
@@ -49,17 +52,24 @@ export default function Search () {
 
     (async () => {
       try {
-        const res = await fetch (
-          `https://swapi.dev/api/people/?search=${state.commit}`);
+        let next = '';
+        const results = [] as SwapiPeople[];
+        do {
+          const res = await fetch (
+            next ? next :
+            `https://swapi.dev/api/people/?search=${state.commit}`);
 
-        if (!res.ok) throw new Error (res.statusText);
+          if (!res.ok) throw new Error (res.statusText);
 
-        const json = await res.json () as SwapiPeopleResponse;
-        console.info (json);
+          const json = await res.json () as SwapiPeopleResponse;
+          if (!json.results) throw new Error ('Can\'t fetch data');
 
-        if (!json.results) throw new Error ('Can\'t fetch data');
+          results.push (...json.results);
+          next = json.next;
+        } while (next);
 
-        dispatch ({what: 'data.fetch', payload: json.results})
+        console.info (results);
+        dispatch ({what: 'data.fetch', payload: results})
       }
       catch (e) {throw e}
     })();
