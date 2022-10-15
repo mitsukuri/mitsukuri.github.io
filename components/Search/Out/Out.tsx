@@ -14,7 +14,9 @@ export default function Out ({dispatch} : {dispatch : Dispatch <SearchAction>}) 
       {ctx.data.map ((d,i) => <ul key={i}>{d.name}</ul>)}
     </li>)}*/
     <>
-      {ctx.data.map ((d,i) => <Entry key={i} data={d}/>)}
+      {ctx.data
+          .sort ((a,b) => a.name > b.name ? 1 : (a.name < b.name) ? - 1 : 0)
+          .map ((d,i) => <Entry key={i} data={d}/>)}
     </>
     );
   }
