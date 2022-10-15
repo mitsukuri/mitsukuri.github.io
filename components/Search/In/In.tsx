@@ -12,15 +12,20 @@ export default function In () {
   const state             = useContext (StateCtx);
 
   return (
-  <div className = {[style.root, state.expanded && style.expanded].join (' ')}>
+  <div className = {[style.root, state.mini && style.mini].join (' ')}>
     <div className = {style.chrome}>
       <input
         className   = {style.input}
         type        = "text"
         placeholder = "May the force be with you"
         onInput     = {e => setInput (e.currentTarget.value)}
-        onKeyDown   = {e => {e.key === 'Enter' && dispatch ({
-          what: 'input.change', payload : input})}}
+        onKeyDown   = {e => {
+            if (e.key === 'Enter') {
+              dispatch ({what: 'input.change', payload : input});
+              !state.mini && dispatch ({what: 'minimize'});
+            }
+          }
+        }
       />
     </div>
   </div>);

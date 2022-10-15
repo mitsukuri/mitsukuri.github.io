@@ -19,7 +19,7 @@ export type SearchAction = {
 }
 const initState = {
   commit   : '',
-  expanded : true,
+  mini     : false,
   data     : [] as SwapiPeople[],
 };
 export type TSearchState = typeof initState;
@@ -33,7 +33,7 @@ export default function Search () {
   function reducer (state : TSearchState, action : SearchAction) : TSearchState
   {
     switch (action.what) {
-      case 'expand'      : return {...state, expanded : false};
+      case 'minimize'    : return {...state, mini : true};
       case 'input.change': return {...state, commit : action.payload as string};
       case 'data.fetch'  : return {...state,
                                       data : action.payload as SwapiPeople[]};
@@ -42,8 +42,8 @@ export default function Search () {
   }
 
   useEffect (() => {
+
     if (state.commit === '') return;
-    if (state.expanded) dispatch ({what: 'expand'});
 
     const ac = new AbortController ();
 
