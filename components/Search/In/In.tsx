@@ -1,20 +1,19 @@
+import { useContext,
+         useState }    from 'react';
 
-import { Dispatch, useContext, useState } from 'react';
+import { StateCtx,
+         DispatchCtx } from '../Search';
+import style           from './In.module.css';
 
-import style                              from './In.module.css';
-import { SearchAction, StateCtx }         from '../Search';
-
-export default function In
-({dispatch} : {dispatch : Dispatch <SearchAction>})
-{
+export default function In () {
   const [input, setInput] = useState ('');
+  const dispatch          = useContext (DispatchCtx);
+  const state             = useContext (StateCtx);
 
   function dispatchFocus () {dispatch ({what : 'input.focus'})}
 
-  const ctx = useContext (StateCtx);
-
   return (
-  <div className = {[style.root, ctx.expanded && style.expanded].join (' ')}>
+  <div className = {[style.root, state.expanded && style.expanded].join (' ')}>
     <div className = {style.chrome}>
       <input
         className   = {style.input}

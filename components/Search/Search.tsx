@@ -1,4 +1,5 @@
 import { createContext,
+         Dispatch,
          useEffect,
          useReducer}   from "react";
 
@@ -23,6 +24,7 @@ const initState = {
 };
 export type TSearchState = typeof initState;
 export const StateCtx    = createContext (initState);
+export const DispatchCtx = createContext ({} as Dispatch <SearchAction>);
 
 export default function Search () {
 
@@ -67,8 +69,10 @@ export default function Search () {
 
   return (
   <StateCtx.Provider value = {state}>
+  <DispatchCtx.Provider value = {dispatch}>
     <In dispatch = {dispatch}/>
     <Out dispatch = {dispatch}/>
+  </DispatchCtx.Provider>
   </StateCtx.Provider>
   );
 }
