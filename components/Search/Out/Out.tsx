@@ -21,5 +21,4 @@ export default function Out ({dispatch} : {dispatch : Dispatch <SearchAction>}) 
       {renderContent ()}
     </div>
   </div>
-
 }

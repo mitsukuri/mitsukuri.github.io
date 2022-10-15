@@ -8,7 +8,7 @@ export default function In
 {
   const [input, setInput] = useState ('');
 
-  function dispatchFocus () {dispatch ({type : 'input.focus'})}
+  function dispatchFocus () {dispatch ({what : 'input.focus'})}
 
   const ctx = useContext (SearchCtx);
 
@@ -21,7 +21,7 @@ export default function In
         onFocus={dispatchFocus}
         onInput={e => setInput (e.currentTarget.value)}
         onKeyDown={e => {e.key === 'Enter' && dispatch ({
-          type: 'input.change', value : input})}}
+          what: 'input.change', data : input})}}
       />
     </div>
   </div>;

@@ -14,8 +14,8 @@ type SwapiPeopleResponse = {
   results  : SwapiPeople []
 }
 export type SearchAction = {
-  type   : string,
-  value? : string | boolean
+  what   : string,
+  data?  : string | boolean | SwapiPeople []
 }
 const initState = {
   commit   : '',
@@ -30,15 +30,16 @@ export default function Search () {
   const [state, dispatch] = useReducer (reducer, initState);
 
   function reducer (state : TSearchState, action : SearchAction) : TSearchState {
-    switch (action.type) {
-      case 'input.focus': return (state.expanded)
-        ? {...state, expanded : false}
-        : state;
+    switch (action.what) {
+      case 'input.focus': return {...state, expanded : false}
       case 'input.change':
-        console.info (`change: ${action.value}`);
-        return {...state, commit : action.value as string};
+        console.info (`change: ${action.data}`);
+        return {...state, commit : action.data as string};
+      case 'data.fetch':
+        console.info (`data.fetch: ${action.data}`);
+        return {...state, data : action.data as SwapiPeople[]};
     }
-    throw new Error (`Undefined action "${action.type}"`);
+    throw new Error (`Undefined action "${action.what}"`);
   }
 
   useEffect (() => {
@@ -53,16 +54,16 @@ export default function Search () {
         const json = await res.json () as SwapiPeopleResponse;
         console.info (json);
         if (!json.results) throw new Error ('Can\'t fetch data');
-        state.data = (json.results);
+        dispatch ({what: 'data.fetch', data: json.results})
       } catch (e) {throw e}
     })();
     return () => ac?.abort ();
-  },[state]);
+  },[state.commit]);
 
   return (
   <SearchCtx.Provider value={state}>
     <In dispatch={dispatch}/>
-    {!state.expanded && <Out dispatch={dispatch}/>}
+    <Out dispatch={dispatch}/>
   </SearchCtx.Provider>
   );
 }
