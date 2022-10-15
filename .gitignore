@@ -3,5 +3,5 @@
 info/
 media/
 node_modules/
-out/
+/out
 next-env.d.ts
