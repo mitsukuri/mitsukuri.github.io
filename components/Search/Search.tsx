@@ -1,5 +1,8 @@
+import Router, { useRouter } from "next/router";
+
 import { createContext,
          Dispatch,
+         useCallback,
          useEffect,
          useReducer}   from "react";
 
@@ -32,6 +35,7 @@ export const DispatchCtx = createContext ({} as Dispatch <SearchAction>);
 export default function Search () {
 
   const [state, dispatch] = useReducer (reducer, initState);
+  const router = useRouter ();
 
   function reducer (state : TSearchState, action : SearchAction) : TSearchState
   {
@@ -47,6 +51,7 @@ export default function Search () {
   useEffect (() => {
 
     if (state.commit === '') return;
+    Router.replace ('/', `/search?q=${state.commit}/`, {shallow: true});
 
     const ac = new AbortController ();
 
