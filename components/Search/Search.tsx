@@ -22,7 +22,7 @@ const initState = {
   data     : [] as SwapiPeople[],
 };
 export type TSearchState = typeof initState;
-export const SearchCtx   = createContext (initState);
+export const StateCtx    = createContext (initState);
 
 export default function Search () {
 
@@ -66,9 +66,9 @@ export default function Search () {
   },[state.commit]);
 
   return (
-  <SearchCtx.Provider value={state}>
-    <In dispatch={dispatch}/>
-    <Out dispatch={dispatch}/>
-  </SearchCtx.Provider>
+  <StateCtx.Provider value = {state}>
+    <In dispatch = {dispatch}/>
+    <Out dispatch = {dispatch}/>
+  </StateCtx.Provider>
   );
 }
