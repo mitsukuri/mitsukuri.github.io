@@ -4,7 +4,6 @@
   scrollbar-width: thin;
 }
 body {
-  background: #000;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -13,6 +12,7 @@ body {
 }
 #__next {
   display: grid;
+  background: rgb(20, 20, 20);
   font-family: 'Segoe UI';
   grid-auto-rows: min-content auto;
   grid-gap: 5px;

@@ -17,8 +17,6 @@ export default function Out () {
   }
   return (
   <div className = {style.root}>
-    <div className = {style.out}>
       {renderContent ()}
-    </div>
   </div>);
 }
