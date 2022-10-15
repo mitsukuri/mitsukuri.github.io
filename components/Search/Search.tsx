@@ -51,7 +51,8 @@ export default function Search () {
   useEffect (() => {
 
     if (state.commit === '') return;
-    Router.replace ('/', `/search?q=${state.commit}/`, {shallow: true});
+
+    Router.push ('/', `/search?q=${state.commit}/`, {shallow: true});
 
     const ac = new AbortController ();
 
