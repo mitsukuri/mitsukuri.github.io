@@ -6,6 +6,7 @@ import { createContext,
          useReducer}   from "react";
 
 import { SwapiPeople } from "../../interfaces/swapi-people";
+import { SSGet, SSSet } from "../../util/util";
 import In              from "./In/In";
 import Out             from "./Out/Out";
 
@@ -49,14 +50,10 @@ export default function Search () {
   useEffect (() => {
     if (state.commit === '') return;
 
-    const ss = sessionStorage.getItem (`query:${state.commit}`);
-    if (ss) {
-      const json = JSON.parse (ss);
-      if (json) {
-        dispatch ({what: 'data.fetch', payload: json});
-        console.info (`Got ${state.commit} from SessionStorage`);
-        return;
-      }
+    const cached = SSGet ('query', state.commit);
+    if (cached) {
+      dispatch ({what: 'data.fetch', payload: cached});
+      return;
     }
 
     Router.push ('/', `/search?q=${state.commit}/`, {shallow: true});
@@ -83,7 +80,7 @@ export default function Search () {
 
         console.info (results);
         dispatch ({what: 'data.fetch', payload: results})
-        results.length && sessionStorage.setItem (`query:${state.commit}`, JSON.stringify (results));
+        results.length && SSSet ('query', state.commit, results);
       }
       catch (e) {throw e}
     })();
