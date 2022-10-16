@@ -23,6 +23,7 @@ type SearchAction = {
 const initState = {
   commit   : '',
   mini     : false,
+  init     : false,
   data     : [] as SwapiPeople[],
 };
 type TSearchState = typeof initState;
@@ -39,6 +40,7 @@ export default function Search () {
   function reducer (state : TSearchState, action : SearchAction) : TSearchState
   {
     switch (action.what) {
+      case 'initialize'  : return {...state, init : true};
       case 'minimize'    : return {...state, mini : true};
       case 'input.change': return {...state, commit : action.payload as string};
       case 'data.fetch'  : return {...state,
@@ -46,6 +48,10 @@ export default function Search () {
     }
     throw new Error (`Undefined action "${action.what}"`);
   }
+
+  useEffect (() => {
+    dispatch ({what : 'initialize'});
+  },[]);
 
   useEffect (() => {
     if (state.commit === '') return;
