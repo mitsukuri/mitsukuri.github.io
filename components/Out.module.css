@@ -5,7 +5,6 @@
   background    : rgb(53, 53, 53);
   border-radius : 5px;
   outline       : 1px solid #0000005e;
-  overflow-x      : hidden;
-  overflow-y: scroll;
+  overflow      : auto;
   padding       : 3px;
 }
