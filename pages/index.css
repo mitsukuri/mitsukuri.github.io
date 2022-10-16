@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'StarWars';
-  src: url('/fonts/starjedi.woff') format('woff2');
+  src: url('../public/fonts/starjedi.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
 }
