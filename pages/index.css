@@ -13,12 +13,12 @@ body {
 }
 #__next {
   display: grid;
-  background: rgb(20, 20, 20);
+  background: #333333;
   font-family: 'Oswald';
   font-size: 15px;
   font-weight: 400;
   grid-auto-rows: min-content auto;
-  grid-gap: 3px;
+  grid-gap: 5px;
   height: 100vh;
   padding: 5px;
 }

@@ -5,27 +5,31 @@
   display: inherit;
   height: calc(100vh - 10px);
   justify-items: center;
+  outline: 1px solid #0000005e;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
   z-index: 1;
 }
 
 .mini {
-  height: 62px;
+  height: 60px;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .input {
   background: hsl(0deg 0% 20%);
+  font-size: 25px;
+  font-weight: 200;
   border-radius: 3px;
   border: 2px solid hsl(0deg 0% 0%);
   color: hsl(0deg 0% 50%);
-  height: 3em;
+  height: 1.7em;
   text-shadow: 0 0 2px #ffffff40;
   outline: none;
   text-align: center;
   box-shadow: 0 0 2px #0008, inset 0 0 2px #0008;
   max-width: 400px;
   width: 50%;
+  padding-bottom: 8px;
 }
 
 .input::placeholder {

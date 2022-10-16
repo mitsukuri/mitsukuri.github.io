@@ -17,6 +17,6 @@ export default function Out () {
   }
   return (
   <div className = {style.root}>
-      {renderContent ()}
+    {renderContent ()}
   </div>);
 }

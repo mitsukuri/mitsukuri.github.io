@@ -1,14 +1,53 @@
 .root {
-  height: 30px;
-  color: rgb(27, 27, 27);
+  align-content: center;
   background: rgb(94, 94, 94);
-  border-radius: 3px;
-  padding: 0 5px;
-  /* text-align: center; */
+  border-radius: 5px;
   border: 2px solid #080808;
+  color: rgb(27, 27, 27);
+  display: grid;
+  grid-column-gap: 3px;
+  grid-template-columns: 3fr repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  padding: 3px;
   transition: background 16.7ms ease-in-out;
 }
-
+.root > * {
+  border-radius: 2px;
+  text-align: center;
+  outline: 1px solid #0004;
+}
+.root > *::before {
+  display: flex;
+  opacity: 0.5;
+  margin-left: 2px;
+  font-size: 10px;
+  font-weight: 500;
+  position: absolute;
+}
+.name {
+  background: hsl(60 5% 50% / 1);
+}
+.name::before {
+  content: 'name';
+}
+.planet {
+  background: hsl(41 5% 50% / 1);
+}
+.planet::before {
+  content: 'planet';
+}
+.year {
+  background: hsl(145 5% 50% / 1);
+}
+.year::before {
+  content: 'born'
+}
+.gender {
+  background: hsl(305 5% 50% / 1);
+}
+.gender::before {
+  content: 'gender';
+}
 .root:hover {
   background: #333;
   transition: background 100ms ease-in-out;
