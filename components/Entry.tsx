@@ -43,7 +43,6 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
         if (!res.ok) throw new Error (res.statusText);
 
         const json = await res.json () as SwapiPlanet;
-        console.info (json);
 
         if (!json.name) throw new Error ('Can\'t fetch data');
         setPlanet (u (json.name));

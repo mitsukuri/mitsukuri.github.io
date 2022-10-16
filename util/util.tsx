@@ -3,7 +3,6 @@ export function getSS (prefix: string, key : string) {
   if (i) {
     const json = JSON.parse (i);
     if (json) {
-      console.info (`Got ${key} from SessionStorage`);
       return json;
     }
   }
@@ -11,5 +10,4 @@ export function getSS (prefix: string, key : string) {
 
 export function setSS (prefix: string, key : string, data : Object) {
   sessionStorage.setItem (`${prefix}:${key}`, JSON.stringify (data));
-  console.info (`Saved ${key} to SessionStorage`);
 }

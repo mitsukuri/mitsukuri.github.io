@@ -78,7 +78,6 @@ export default function Search () {
           next = json.next;
         } while (next);
 
-        console.info (results);
         dispatch ({what: 'data.fetch', payload: results})
         results.length && setSS ('query', state.commit, results);
       }
