@@ -5,6 +5,12 @@
   background    : rgb(53, 53, 53);
   border-radius : 5px;
   outline       : 1px solid #0000005e;
-  overflow      : auto;
+  overflow-x      : hidden;
+  overflow-y: scroll;
   padding       : 3px;
+}
+
+.clipscroll {
+  border-radius: 50px;
+  overflow: hidden;
 }

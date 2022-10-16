@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 * {
   margin         : 0;
   padding        : 0;
   scrollbar-width: thin;
+  font-family: inherit;
+  font-size  : inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 body {
   box-sizing: border-box;
   overflow  : hidden;
+  font-family   : 'Oswald';
+  font-size     : 15px;
+  font-weight   : 400;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,17 +22,8 @@ body {
 #__next {
   background    : #333333;
   display       : grid;
-  font-family   : 'Oswald';
-  font-size     : 15px;
-  font-weight   : 400;
   grid-auto-rows: min-content auto;
   grid-gap      : 5px;
   height        : 100vh;
   padding       : 5px;
-}
-input {
-  font-family: inherit;
-  font-size  : inherit;
-  font-weight: inherit;
-  line-height: inherit;
 }

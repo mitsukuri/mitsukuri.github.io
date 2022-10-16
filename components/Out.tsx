@@ -17,8 +17,10 @@ export default function Out () {
     </>;
   }
   return (
-  <div className = {style.root}>
-    <Heading/>
-    {renderContent ()}
-  </div>);
+    <div className={style.clipscroll}>
+      <div className = {style.root}>
+        <Heading/>
+        {renderContent ()}
+      </div>
+    </div>);
 }

@@ -17,9 +17,10 @@ function y (s? : string) {
 
 export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
-  const [born, setBorn]     = useState (<></>);
-  const [gender, setGender] = useState ('');
-  const [planet, setPlanet] = useState ('');
+  const [born, setBorn]       = useState (<></>);
+  const [gender, setGender]   = useState ('');
+  const [planet, setPlanet]   = useState ('');
+  const [fetched, setFetched] = useState (false);
 
   useEffect (() => {
 
@@ -28,6 +29,7 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
     const cached = getSS ('planet', data.homeworld);
     if (cached) {
       setPlanet (u (cached.name));
+      setFetched (true);
       return;
     }
 
@@ -45,6 +47,7 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
         if (!json.name) throw new Error ('Can\'t fetch data');
         setPlanet (u (json.name));
+        setFetched (true);
 
         data.homeworld && setSS ('planet', data.homeworld, json);
       }
@@ -62,7 +65,7 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
   },[data.gender]);
 
   return (
-  <div className = {style.root}>
+  <div className = {[style.root, fetched && style.fetched].join (' ')}>
     <div className={style.name}>{data.name}</div>
     <div className={style.planet}>{planet}</div>
     <div className={style.year}>{born}</div>

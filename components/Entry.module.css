@@ -7,9 +7,14 @@
   grid-column-gap      : 3px;
   grid-template-columns: 3fr repeat(3, 1fr);
   grid-template-rows   : 1fr;
+  opacity              : 0;
   outline              : 1px solid #080808;
   padding              : 3px;
   transition           : background 16.7ms ease-in-out;
+}
+.fetched {
+  opacity              : 1;
+  transition           : opacity 0.5s;
 }
 .root > * {
   border-radius: 2px;
