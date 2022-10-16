@@ -1,24 +1,10 @@
 .root {
   align-items: center;
-  background:
-    linear-gradient(
-    120deg,
-    #2228 0%,
-    #3338 100%),
-    linear-gradient(
-    60deg,
-    #2228 0%,
-    #3338 100%),
-    linear-gradient(
-    0deg,
-    #222 0%,
-    #333 100%);
   border-radius: 5px;
-  /* box-shadow: 0 20px 60px -20px #0028c4; */
+  background: hsl(0deg 0% 33%);
   display: inherit;
   height: calc(100vh - 10px);
   justify-items: center;
-  outline: 1px solid black;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
   z-index: 1;
 }
@@ -28,55 +14,36 @@
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
-.chrome {
-  background: repeating-linear-gradient(
-    5deg,
-    hsl(0, 20%, 20%) 0%,
-    hsl(220, 20%, 60%) 50%,
-    hsl(0, 20%, 20%) 50%,
-    hsl(220, 20%, 45%)
-  );
-  border-radius: 5px;
-  box-shadow: 0 1px 2px #000;
-  display: inherit;
-  padding: 2px;
-  width: 50%;
-  max-width: 400px;
-}
-
 .input {
-  background: #0f0f0f;
-  border-radius: 5px;
-  border: 1px solid #000000;
-  color: #9d9d9d;
+  background: hsl(0deg 0% 20%);
+  border-radius: 3px;
+  border: 2px solid hsl(0deg 0% 0%);
+  color: hsl(0deg 0% 50%);
   height: 3em;
+  text-shadow: 0 0 2px #ffffff40;
   outline: none;
   text-align: center;
-  width: 100%;
-}
-
-.chrome:focus-within {
-  box-shadow: 0 1px 15px #f003;
-}
-
-.input:focus {
-  background: #300;
-  box-shadow: inset 0 3px 20px #0008;
-  color: #f00;
-  text-shadow: 0 0 2px #f00;
-
-}
-
-.input::selection {
-  background: #800;
-  box-shadow: 0 0 5px #f00;
-  color: #f00
+  box-shadow: 0 0 2px #0008, inset 0 0 2px #0008;
+  max-width: 400px;
+  width: 50%;
 }
 
 .input::placeholder {
-  color: rgb(100, 100, 100);
+  color: hsl(0deg 0% 50%);
+  text-shadow: none;
 }
 
 .input:focus::placeholder {
   opacity: 0;
+}
+
+.input:focus {
+  background: hsl(0deg 0% 42%);
+  color: hsl(0deg 0% 10%);
+  text-shadow: 0 0 2px #0000008c;
+}
+
+.input::selection {
+  background: #818181;
+  color: #000;
 }

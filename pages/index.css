@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +14,16 @@ body {
 #__next {
   display: grid;
   background: rgb(20, 20, 20);
-  font-family: 'Segoe UI';
+  font-family: 'Oswald';
   grid-auto-rows: min-content auto;
-  grid-gap: 5px;
+  grid-gap: 3px;
+  font-weight: 700;
   height: 100vh;
   padding: 5px;
 }
 input {
   font-family: inherit;
+  font-weight: inherit;
   font-size: inherit;
   line-height: inherit;
 }

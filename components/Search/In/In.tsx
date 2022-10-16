@@ -13,20 +13,18 @@ export default function In () {
 
   return (
   <div className = {[style.root, state.mini && style.mini].join (' ')}>
-    <div className = {style.chrome}>
-      <input
-        className   = {style.input}
-        type        = "text"
-        placeholder = "May the force be with you"
-        onInput     = {e => setInput (e.currentTarget.value)}
-        onKeyDown   = {e => {
-            if (e.key === 'Enter') {
-              dispatch ({what: 'input.change', payload : input});
-              !state.mini && dispatch ({what: 'minimize'});
-            }
+    <input
+      className   = {style.input}
+      type        = "text"
+      placeholder = "May the force be with you..."
+      onInput     = {e => setInput (e.currentTarget.value)}
+      onKeyDown   = {e => {
+          if (e.key === 'Enter') {
+            dispatch ({what: 'input.change', payload : input});
+            !state.mini && dispatch ({what: 'minimize'});
           }
         }
-      />
-    </div>
-  </div>);
+      }
+    />
+</div>);
 }
