@@ -13,7 +13,13 @@ export default function In () {
 
   return (
   <div className = {[style.root, state.mini && style.mini].join (' ')}>
-    <input
+    <div className={style.box}>
+      <div className={style.logo}>
+        Star Wars
+        <br/>
+        <span className={style.smaller}>Search Engine</span>
+      </div>
+      <input
       className   = {style.input}
       type        = "text"
       placeholder = "May the force be with you..."
@@ -25,6 +31,7 @@ export default function In () {
           }
         }
       }
-    />
+      />
+    </div>
 </div>);
 }

@@ -8,12 +8,10 @@
   outline      : 1px solid #0000005e;
   transition   : height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
-
 .mini {
   height    : 60px;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
-
 .input {
   background    : hsl(0deg 0% 20%);
   border-radius : 3px;
@@ -22,31 +20,44 @@
   color         : hsl(0deg 0% 50%);
   font-size     : 25px;
   font-weight   : 200;
-  height        : 1.7em;
-  max-width     : 400px;
+  height        : 2em;
+  max-width     : 500px;
   outline       : none;
-  padding-bottom: 2px;
   text-align    : center;
   text-shadow   : 0 0 2px #ffffff40;
-  width         : 50%;
+  /* width         : 50%; */
 }
-
 .input::placeholder {
   color      : hsl(0deg 0% 50%);
   text-shadow: none;
 }
-
 .input:focus::placeholder {
   opacity: 0;
 }
-
 .input:focus {
   background : hsl(0deg 0% 50%);
   color      : hsl(0deg 0% 10%);
   text-shadow: 0 0 2px #0000008c;
 }
-
 .input::selection {
   background: #999;
   color     : #000;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  text-shadow: 0 10px 30px #0004, 0 0 5px #0008;
+}
+.logo {
+  font-size: 5em;
+  line-height: 0.7em;
+  text-align: center;
+  font-family: StarWars;
+  margin-bottom: 20px;
+}
+.smaller {
+  color: #4e7959;
+  font-size: 0.75em;
 }
