@@ -1,15 +1,16 @@
 .root {
   align-content        : center;
   background           : rgb(94, 94, 94);
-  border-radius        : 5px;
-  border               : 1px solid #080808;
+  border-radius        : 2px;
   color                : rgb(27, 27, 27);
   display              : grid;
   font-size            : 10px;
+  font-weight          : 550;
   grid-column-gap      : 3px;
   grid-template-columns: 3fr repeat(3, 1fr);
   grid-template-rows   : 1fr;
-  height               : 25px;
+  line-height          : 15px;
+  outline              : 1px solid #080808;
   padding              : 3px;
   pointer-events       : none;
 }

@@ -1,7 +1,7 @@
 .root {
 	display       : flex;
 	flex-direction: column;
-	gap           : 3px;
+	gap           : 1px;
   background    : rgb(53, 53, 53);
   border-radius : 5px;
   outline       : 1px solid #0000005e;
