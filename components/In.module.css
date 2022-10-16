@@ -28,6 +28,7 @@
   text-align    : center;
   text-shadow   : 0 0 2px #ffffff40;
   width         : 100%;
+  transition    : background 100ms;
 }
 .input::placeholder {
   color      : hsl(0deg 0% 50%);
@@ -40,6 +41,7 @@
   background : hsl(0deg 0% 50%);
   color      : hsl(0deg 0% 10%);
   text-shadow: 0 0 2px #0000008c;
+  transition    : background 100ms;
 }
 .input::selection {
   background: #999;
