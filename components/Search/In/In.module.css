@@ -47,6 +47,6 @@
 }
 
 .input::selection {
-  background: #818181;
+  background: #999;
   color     : #000;
 }
