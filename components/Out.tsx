@@ -1,9 +1,9 @@
 import { useContext } from "react";
 
-import { StateCtx } from '../Search';
-import style        from "./Out.module.css";
-import Entry        from "./Entry/Entry";
-import Heading      from "./Heading/Heading";
+import { StateCtx }   from './Search';
+import style          from "./Out.module.css";
+import Entry          from "./Entry";
+import Heading        from "./Heading";
 
 export default function Out () {
 

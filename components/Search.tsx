@@ -1,14 +1,14 @@
-import Router, { useRouter } from "next/router";
+import Router           from "next/router";
 
 import { createContext,
          Dispatch,
          useEffect,
-         useReducer}   from "react";
+         useReducer}    from "react";
 
-import { SwapiPeople } from "../../interfaces/swapi-people";
-import { getSS, setSS } from "../../util/util";
-import In              from "./In/In";
-import Out             from "./Out/Out";
+import { SwapiPeople }  from "../interfaces/swapi-people";
+import { getSS, setSS } from "../util/util";
+import In               from "./In";
+import Out              from "./Out";
 
 type SwapiPeopleResponse = {
   count    : number,

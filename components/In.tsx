@@ -2,7 +2,7 @@ import { useContext,
          useState }    from 'react';
 
 import { StateCtx,
-         DispatchCtx } from '../Search';
+         DispatchCtx } from './Search';
 import style           from './In.module.css';
 
 export default function In () {

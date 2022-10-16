@@ -1,8 +1,8 @@
 import { useEffect, useState }   from 'react';
 
-import { SwapiPeople }  from '../../../../interfaces/swapi-people';
-import { SwapiPlanet }  from '../../../../interfaces/swapi-planet';
-import { getSS, setSS } from '../../../../util/util';
+import { SwapiPeople }  from '../interfaces/swapi-people';
+import { SwapiPlanet }  from '../interfaces/swapi-planet';
+import { getSS, setSS } from '../util/util';
 import style            from './Entry.module.css';
 
 function u (s? : string) {return (!s || s === 'unknown') ? '?' : s}
