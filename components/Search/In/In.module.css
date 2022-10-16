@@ -1,39 +1,38 @@
 .root {
-  align-items: center;
+  align-items  : center;
+  background   : hsl(0deg 0% 33%);
   border-radius: 5px;
-  background: hsl(0deg 0% 33%);
-  display: inherit;
-  height: calc(100vh - 10px);
+  display      : inherit;
+  height       : calc(100vh - 10px);
   justify-items: center;
-  outline: 1px solid #0000005e;
-  transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
-  z-index: 1;
+  outline      : 1px solid #0000005e;
+  transition   : height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .mini {
-  height: 60px;
+  height    : 60px;
   transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
 }
 
 .input {
-  background: hsl(0deg 0% 20%);
-  font-size: 25px;
-  font-weight: 200;
-  border-radius: 3px;
-  border: 2px solid hsl(0deg 0% 0%);
-  color: hsl(0deg 0% 50%);
-  height: 1.7em;
-  text-shadow: 0 0 2px #ffffff40;
-  outline: none;
-  text-align: center;
-  box-shadow: 0 0 2px #0008, inset 0 0 2px #0008;
-  max-width: 400px;
-  width: 50%;
-  padding-bottom: 8px;
+  background    : hsl(0deg 0% 20%);
+  border-radius : 3px;
+  border        : 2px solid hsl(0deg 0% 0%);
+  box-shadow    : 0 0 2px #0008, inset 0 0 2px #0008;
+  color         : hsl(0deg 0% 50%);
+  font-size     : 25px;
+  font-weight   : 200;
+  height        : 1.7em;
+  max-width     : 400px;
+  outline       : none;
+  padding-bottom: 2px;
+  text-align    : center;
+  text-shadow   : 0 0 2px #ffffff40;
+  width         : 50%;
 }
 
 .input::placeholder {
-  color: hsl(0deg 0% 50%);
+  color      : hsl(0deg 0% 50%);
   text-shadow: none;
 }
 
@@ -42,12 +41,12 @@
 }
 
 .input:focus {
-  background: hsl(0deg 0% 42%);
-  color: hsl(0deg 0% 10%);
+  background : hsl(0deg 0% 50%);
+  color      : hsl(0deg 0% 10%);
   text-shadow: 0 0 2px #0000008c;
 }
 
 .input::selection {
   background: #818181;
-  color: #000;
+  color     : #000;
 }

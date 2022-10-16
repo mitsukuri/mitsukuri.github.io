@@ -5,38 +5,28 @@
   border               : 1px solid #080808;
   color                : rgb(27, 27, 27);
   display              : grid;
+  font-size            : 10px;
   grid-column-gap      : 3px;
   grid-template-columns: 3fr repeat(3, 1fr);
   grid-template-rows   : 1fr;
+  height               : 25px;
   padding              : 3px;
-  transition           : background 16.7ms ease-in-out;
+  pointer-events       : none;
 }
 .root > * {
   border-radius: 2px;
-  line-height  : 20px;
   outline      : 1px solid #0004;
   text-align   : center;
 }
 .name {
-  background: hsl(60 5% 50% / 1);
+  background: hsl(60 10% 63% / 1);
 }
 .planet {
-  background: hsl(41 5% 50% / 1);
+  background: hsl(41 10% 63% / 1);
 }
 .year {
-  background: hsl(145 5% 50% / 1);
+  background: hsl(145 10% 63% / 1);
 }
 .gender {
-  background : hsl(305 5% 50% / 1);
-  font-size  : 0.75em;
-  font-weight: 500;
-}
-.root:hover {
-  background: #999;
-  transition: background 100ms ease-in-out;
-}
-.epoch {
-  margin-left: 2px;
-  font-size  : 0.75em;
-  font-weight: 400
+  background: hsl(305 10% 63% / 1);
 }

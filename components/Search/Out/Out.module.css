@@ -1,10 +1,10 @@
 .root {
-	display: flex;
+	display       : flex;
 	flex-direction: column;
-	gap: 3px;
-  background: rgb(53, 53, 53);
-  border-radius: 5px;
-  outline: 1px solid #0000005e;
-  overflow: auto;
-  padding: 3px;
+	gap           : 3px;
+  background    : rgb(53, 53, 53);
+  border-radius : 5px;
+  outline       : 1px solid #0000005e;
+  overflow      : auto;
+  padding       : 3px;
 }

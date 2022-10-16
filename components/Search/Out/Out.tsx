@@ -1,8 +1,9 @@
 import { useContext } from "react";
 
-import { StateCtx }   from '../Search';
-import style          from "./Out.module.css";
-import Entry          from "./Entry/Entry";
+import { StateCtx } from '../Search';
+import style        from "./Out.module.css";
+import Entry        from "./Entry/Entry";
+import Heading      from "./Heading/Heading";
 
 export default function Out () {
 
@@ -17,6 +18,7 @@ export default function Out () {
   }
   return (
   <div className = {style.root}>
+    <Heading/>
     {renderContent ()}
   </div>);
 }
