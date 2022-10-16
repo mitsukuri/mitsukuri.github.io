@@ -10,9 +10,18 @@
   perspective  : 400px;
   perspective-origin: center 40%;
 }
-.mini {
-  height    : 60px;
-  transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+.root_mini {
+  align-items  : center;
+  background   : hsl(0deg 0% 33%);
+  border-radius: 5px;
+  display      : inherit;
+  justify-items: center;
+  outline      : 1px solid #0000005e;
+  transition   : height 0.3s cubic-bezier(0.7, 0, 0.84, 0);
+  perspective  : 400px;
+  perspective-origin: center 40%;
+  height       : 200px;
+  transition: height 0.3s cubic-bezier(0.7, 0, 0.84, 0),
 }
 .input {
   background    : hsl(0deg 0% 20%);
@@ -38,10 +47,10 @@
   opacity: 0;
 }
 .input:focus {
-  background : hsl(0deg 0% 50%);
-  color      : hsl(0deg 0% 10%);
-  text-shadow: 0 0 2px #0000008c;
-  transition    : background 100ms;
+  background  : hsl(0deg 0% 50%);
+  color       : hsl(0deg 0% 10%);
+  text-shadow : 0 0 2px #0000008c;
+  transition  : background 100ms;
 }
 .input::selection {
   background: #999;
@@ -55,11 +64,30 @@
   text-shadow: 0 10px 30px #0004, 0 0 5px #0008;
 }
 .box_init {
-  transform: rotateX(50deg) translateY(500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  text-shadow: 0 10px 30px #0004, 0 0 5px #0008;
+  transform: rotateX(50deg) translateY(360px);
 }
 .box_done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  text-shadow: 0 10px 30px #0004, 0 0 5px #0008;
   transform: rotateX(50deg) translateY(-50px);
   transition: transform 5s;
+}
+.box_mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50vw;
+  text-shadow: 0 10px 30px #0004, 0 0 5px #0008;
+  transform: rotateX(0) translateY(0);
+  transition: transform 1000ms;
 }
 .logo {
   font-size: 5em;

@@ -12,8 +12,9 @@ export default function In () {
   const state             = useContext (StateCtx);
 
   return (
-  <div className = {[s.root, state.mini && s.mini].join (' ')}>
-    <div className={[s.box, state.init ? s.box_done : s.box_init].join (' ')}>
+  <div className = {[state.mini ? s.root_mini : s.root].join (' ')}>
+    <div className={[state.mini ? s.box_mini : s.box,
+                     state.init ? s.box_done : s.box_init].join (' ')}>
       <div className={s.logo}>
         Star Wars
         <br/>
