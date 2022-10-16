@@ -93,7 +93,7 @@ export default function Search () {
     <DispatchCtx.Provider value = {dispatch}>
       <In/>
     </DispatchCtx.Provider>
-    <Out/>
+    {state.mini && <Out/>}
   </StateCtx.Provider>
   );
 }
