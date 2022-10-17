@@ -73,7 +73,7 @@ export default function Search () {
         do {
           const res = await fetch (
             next ? next :
-            `https://swapi.dev/api/people/?search=${state.commit}`);
+            `https://swapi.dev/api/people/?search=${state.commit}`, {mode: "cors"});
 
           if (!res.ok) throw new Error (res.statusText);
 

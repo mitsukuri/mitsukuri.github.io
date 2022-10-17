@@ -39,7 +39,7 @@ export default function Entry ({data} : {data : Partial <SwapiPeople> & {id:numb
 
     (async () => {
       try {
-        const res = await fetch (URL);
+        const res = await fetch (URL, {mode: 'cors'});
 
         if (!res.ok) throw new Error (res.statusText);
 
