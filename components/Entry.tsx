@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useState }   from 'react';
 
 import { SwapiPeople }  from '../interfaces/swapi-people';
@@ -15,7 +16,7 @@ function y (s? : string) {
   </>
 }
 
-export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
+export default function Entry ({data} : {data : Partial <SwapiPeople> & {id:number}}) {
 
   const [born, setBorn]       = useState (<></>);
   const [gender, setGender]   = useState ('');
@@ -63,11 +64,19 @@ export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
     setGender (u (data.gender))
   },[data.gender]);
 
-  return (
-  <div className = {[style.root, fetched && style.fetched].join (' ')}>
-    <div className={style.name}>{data.name}</div>
-    <div className={style.planet}>{planet}</div>
-    <div className={style.year}>{born}</div>
-    <div className={style.gender}>{gender}</div>
-  </div>);
+return (
+  <Link
+    href={{
+      pathname : `/characters/${data.name?.replaceAll(' ','_')}`,
+      query : {x: data.id.toString ()}
+    }}
+    shallow={true}>
+    <div
+      className = {[style.root, fetched && style.fetched].join (' ')}>
+      <div className={style.name}>{data.name}</div>
+      <div className={style.planet}>{planet}</div>
+      <div className={style.year}>{born}</div>
+      <div className={style.gender}>{gender}</div>
+    </div>
+  </Link>);
 }
