@@ -6,7 +6,8 @@ import { createContext,
          useReducer}    from "react";
 
 import { SwapiPeople }  from "../interfaces/swapi-people";
-import { getSS, setSS } from "../util/util";
+import { fetchJSON,
+         getSS}         from "../util/util";
 import In               from "./In";
 import Out              from "./Out";
 
@@ -43,8 +44,9 @@ export default function Search () {
       case 'initialize'  : return {...state, init : true};
       case 'minimize'    : return {...state, mini : true};
       case 'input.change': return {...state, commit : action.payload as string};
-      case 'data.fetch'  : return {...state,
-                                      data : action.payload as SwapiPeople[]};
+      case 'data.fetch'  :
+      console.info (action.payload);
+      return {...state, data : action.payload as SwapiPeople[]};
     }
     throw new Error (`Undefined action "${action.what}"`);
   }
@@ -64,7 +66,7 @@ export default function Search () {
 
     Router.push ('/', `/search?q=${state.commit}/`, {shallow: true});
 
-    const ac = new AbortController ();
+    /* const ac = new AbortController ();
 
     (async () => {
       try {
@@ -89,8 +91,10 @@ export default function Search () {
       }
       catch (e) {throw e}
     })();
+ */
+    const abort = fetchJSON <SwapiPeople> (`https://swapi.dev/api/people/?search=${state.commit}`, d => dispatch ({what: 'data.fetch', payload: d}));
 
-    return () => ac?.abort ();
+    return () => abort.abort ();
 
   },[state.commit]);
 

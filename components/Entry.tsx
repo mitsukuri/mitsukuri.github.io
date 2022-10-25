@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useEffect, useState }   from 'react';
+import { useEffect, useState } from 'react';
 
 import { SwapiPeople }  from '../interfaces/swapi-people';
 import { SwapiPlanet }  from '../interfaces/swapi-planet';
@@ -16,11 +16,11 @@ function y (s? : string) {
   </>
 }
 
-export default function Entry ({data} : {data : Partial <SwapiPeople> & {id:number}}) {
+export default function Entry ({data} : {data : Partial <SwapiPeople>}) {
 
-  const [born, setBorn]       = useState (<></>);
-  const [gender, setGender]   = useState ('');
-  const [planet, setPlanet]   = useState ('');
+  const [born,    setBorn   ] = useState (<></>);
+  const [gender,  setGender ] = useState ('');
+  const [planet,  setPlanet ] = useState ('');
   const [fetched, setFetched] = useState (false);
 
   useEffect (() => {
